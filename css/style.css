@@ -1,0 +1,15 @@
+#madlib-frame {
+    margin: 20px 30px;
+}
+
+#top-bar {
+    height: 120px;
+}
+
+.row {
+    width: 100%;
+}
+
+div {
+    border: 1px solid red;
+}

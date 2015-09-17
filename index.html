@@ -3,24 +3,44 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, inital-scale=1">
     <title>Angular Email App</title>
+    <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
+    <div class="wrapper">
+        <div id="madlib-frame">
+            <div id="top-bar">
+                <div class="left">
+                    <img id="smiley-img" src="assets/smiley.png" />
+                </div>
+                <div class="right">
+                    <img id="logo-img" src="assets/logo.png" />
+                    <h1>Automate This!</h1>
+                </div>
+            </div>
+            <div id="word-fill">
+                <h2>Provide the following words:</h2>
+                <div id="word-boxes">
+                    <input type="text" ng-modal="male_name" value="male name">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                    <input type="text">
+                </div>
 
-    <div id="madlib-frame">
-        <div id="top-bar">
-            
-        </div>
-        <div  id="word-fill">
-            
-        </div>
-        <div id="story-body">
-            
+            </div>
+            <div id="story-body">
+                <p>{{ male_name }} Hello</p>
+            </div>
         </div>
     </div>
-
 
     <script src="vendor/jquery-1.11.3.js"></script>
     <script src="vendor/angular.1.4.5.min.js"></script>

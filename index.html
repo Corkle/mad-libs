@@ -24,26 +24,34 @@
             <div id="word-fill">
                 <h2>Provide the following words:</h2>
                 <div id="word-boxes">
-                    <input type="text" ng-modal="male_name" value="male name">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
-                    <input type="text">
+                    <input type="text" ng-model="female_name" placeholder="FEMALE NAME">
+                    <input type="text" ng-model="job_title" placeholder="JOB TITLE">
+                    <input type="text" ng-model="tedious_task" placeholder="TEDIOUS TASK">
+                    <input type="text" ng-model="dirty_task" placeholder="DIRTY TASK">
+                    <input type="text" ng-model="celebrity" placeholder="CELEBRITY">
+                    <input type="text" ng-model="useless_skill" placeholder="USELESS SKILL">
+                    <input type="text" ng-model="adjective" placeholder="ADJECTIVE">
+                    <input type="text" ng-model="obnoxiuous_celebrity" placeholder="OBNOXIUOUS CELEBRITY">
+                    <input type="text" ng-model="huge_number" placeholder="HUGE NUMBER">
                 </div>
-
             </div>
             <div id="story-body">
-                <p>{{ male_name }} Hello</p>
+               <h3>The {{ job_title }} Turned Programmer</h3>               
+                <p>{{ female_name }} was a {{job_title}} who loved technology. Although she loved parts of her job, she absolutely hated  {{tedious_task}} and {{dirty_task}}. So {{female_name}} met with her life mentor {{celebrity}} who told her to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so she studied programming instead.</p>
+                <p>What a great decision! With her new skills, {{female_name}} built a(n) {{adjective}} robot named {{obnoxiuous_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} times faster.</p>
             </div>
         </div>
     </div>
 
     <script src="vendor/jquery-1.11.3.js"></script>
     <script src="vendor/angular.1.4.5.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("input").on("focus", function() {
+                $(this).select();
+            })
+        });
+    </script>
 </body>
 
 </html>

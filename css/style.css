@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+h1, h2, h3, input, p {
+    font-family: Verdana, Segoe, sans-serif;
+}
+
 .wrapper {
     margin: 0 auto;
     min-width: 460px;
@@ -12,6 +16,7 @@
 
 #madlib-frame {
     margin: 30px;
+    border: 4px solid black;
 }
 
 
@@ -22,10 +27,12 @@
     height: 120px;
     display: flex;
     flex-flow: row;
+    border-bottom: 4px solid black;
 }
 
 #top-bar .left {
     max-width: 25%;
+    border-right: 4px solid black;
 
     display: flex;
     justify-content: center;
@@ -48,7 +55,7 @@
 
 #top-bar .right h1 {
     margin: 10px 0;
-    font-size: 38px;
+    font-size: 34px;
     line-height: 40px;
 }
 
@@ -61,35 +68,37 @@
 /*     WORD FILL SECTION     */
 
 #word-fill {
-    height: 250px;    
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid black;
 }
 
 #word-boxes {
-    height: 160px;
+    min-height: 160px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
-    align-content: space-around;
+    align-content: center;
 }
 
-#word-boxes {
-    flex: 1 1 0;
+#word-boxes input {
+    border: 2px solid black;
+    border-radius: 25px;
+    flex: 0 1 auto;
+    margin: 5px;
+    padding: 3px 15px;
+    font-size: 15px;
 }
 
 
 /*     STORY BODY SECTION     */
 
 #story-body {
-    height: 400px;
+    min-height: 300px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
-
-
-
-
-
-/*     TEMP     */
-
-div {
-    border: 1px solid red;
+#story-body h3 {
+    text-align: center;
 }

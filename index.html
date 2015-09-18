@@ -11,7 +11,7 @@
 
 <body>
     <div class="wrapper">
-        <div id="madlib-frame">
+        <div id="madlib-frame" ng-controller="wordCtrl">
             <div id="top-bar">
                 <div class="left">
                     <img id="smiley-img" src="assets/smiley.png" />
@@ -23,26 +23,38 @@
             </div>
             <div id="word-fill">
                 <h2>Provide the following words:</h2>
-                <div id="word-boxes">
-                    <input type="text" ng-model="female_name" placeholder="FEMALE NAME">
-                    <input type="text" ng-model="job_title" placeholder="JOB TITLE">
-                    <input type="text" ng-model="tedious_task" placeholder="TEDIOUS TASK">
-                    <input type="text" ng-model="dirty_task" placeholder="DIRTY TASK">
-                    <input type="text" ng-model="celebrity" placeholder="CELEBRITY">
-                    <input type="text" ng-model="useless_skill" placeholder="USELESS SKILL">
-                    <input type="text" ng-model="adjective" placeholder="ADJECTIVE">
-                    <input type="text" ng-model="obnoxiuous_celebrity" placeholder="OBNOXIUOUS CELEBRITY">
-                    <input type="text" ng-model="huge_number" placeholder="HUGE NUMBER">
-                </div>
+                <form name="wordForm">
+                    <div id="word-boxes">
+                        <input type="text" ng-model="name_input" placeholder="PERSON'S NAME" required>
+                        <input type="text" ng-model="job_title_input" placeholder="JOB TITLE" required>
+                        <input type="text" ng-model="tedious_task_input" placeholder="TEDIOUS TASK" required>
+                        <input type="text" ng-model="dirty_task_input" placeholder="DIRTY TASK" required>
+                        <input type="text" ng-model="celebrity_input" placeholder="CELEBRITY" required>
+                        <input type="text" ng-model="useless_skill_input" placeholder="USELESS SKILL" required>
+                        <input type="text" ng-model="adjective_input" placeholder="ADJECTIVE" required>
+                        <input type="text" ng-model="obnoxiuous_celebrity_input" placeholder="OBNOXIUOUS CELEBRITY" required>
+                        <input type="text" ng-model="huge_number_input" placeholder="HUGE NUMBER" required>
+                    </div>
+                    <div id="gender-selector">
+                        <label>{{name_input}}'s Gender:</label>
+                        <select name="genderDropdown" ng-model="selectedGender" ng-options="option for option in genderOptions" ng-change="updateGender(selectedGender)" required></select>
+                    </div>
+                    <span class="error block" ng-show="noGenderError">Select Gender</span>
+                    <div id="form-buttons">
+                        <button id="submit-btn" ng-click="updateStory()" type="submit">Submit</button>
+                        <button id="clear-btn" ng-click="resetForm()" type="reset">Clear</button>
+                    </div>
+                    <span class="error block" ng-show="wordForm.$invalid">Complete Form</span>
+                </form>
             </div>
-            <div id="story-body">
-               <h3>The {{ job_title }} Turned Programmer</h3>               
-                <p>{{ female_name }} was a {{job_title}} who loved technology. Although she loved parts of her job, she absolutely hated  {{tedious_task}} and {{dirty_task}}. So {{female_name}} met with her life mentor {{celebrity}} who told her to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so she studied programming instead.</p>
-                <p>What a great decision! With her new skills, {{female_name}} built a(n) {{adjective}} robot named {{obnoxiuous_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} times faster.</p>
+            <div id="story-body" ng-show="showStory">
+                <h3>The {{ job_title }} Turned Programmer</h3>
+                <p>{{ name }} was a {{job_title}} who loved technology. Although {{he_she}} loved parts of {{his_her}} job, {{he_she}} absolutely hated {{tedious_task}} and {{dirty_task}}. So {{name}} met with {{his_her}} life mentor {{celebrity}} who told {{him_her}} to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so {{he_she}} studied programming instead.</p>
+                <p>What a great decision! With {{his_her}} new skills, {{name}} built a(n) {{adjective}} robot named {{obnoxiuous_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} times faster.</p>
             </div>
         </div>
     </div>
-    
+
     <div ng-controller="myCtrl">
         App Version = {{ version }}
     </div>

@@ -21,9 +21,11 @@
                     <h1>Automate This!</h1>
                 </div>
             </div>
-            <div id="word-fill">
+
+
+            <div id="word-fill" ng-show="showWordFill">
                 <h2>Provide the following words:</h2>
-                <form name="wordForm">
+                <form name="wordForm" novalidate>
                     <div id="word-boxes">
                         <input type="text" ng-model="name_input" placeholder="PERSON'S NAME" required>
                         <input type="text" ng-model="job_title_input" placeholder="JOB TITLE" required>
@@ -33,31 +35,33 @@
                         <input type="text" ng-model="useless_skill_input" placeholder="USELESS SKILL" required>
                         <input type="text" ng-model="adjective_input" placeholder="ADJECTIVE" required>
                         <input type="text" ng-model="obnoxiuous_celebrity_input" placeholder="OBNOXIUOUS CELEBRITY" required>
-                        <input type="text" ng-model="huge_number_input" placeholder="HUGE NUMBER" required>
+                        <input type="number" ng-model="huge_number_input" placeholder="HUGE NUMBER" required>
                     </div>
                     <div ng-show="name_input">
-                    <div id="gender-selector">
-                        <label>{{name_input}}'s Gender:</label>
-                        <select name="genderDropdown" ng-model="selectedGender" ng-options="option for option in genderOptions" ng-change="updateGender(selectedGender)" required></select>
-                    </div>
-                    <span class="error block" ng-show="noGenderError">Select Gender</span>
+                        <div id="gender-selector">
+                            <label>{{name_input}}'s Gender:</label>
+                            <select name="genderDropdown" ng-model="selectedGender" ng-options="option for option in genderOptions" ng-change="updateGender(selectedGender)" required></select>
+                        </div>
+                        <span class="error block" ng-show="wordForm.genderDropdown.$error.required && wordForm.$submitted">Select Gender</span>
                     </div>
                     <div id="form-buttons">
                         <button id="submit-btn" ng-click="updateStory()" type="submit">Submit</button>
                         <button id="clear-btn" ng-click="resetForm()" type="reset">Clear</button>
                     </div>
-                    <span class="error block" ng-show="invalidFormError">Complete Form</span>
+                    <span class="error block" ng-show="wordForm.$invalid && wordForm.$submitted">Complete Form</span>
                 </form>
             </div>
+
             <div id="story-body" ng-show="showStory">
                 <h3>The {{ job_title }} Turned Programmer</h3>
                 <p>{{ name }} was a {{job_title}} who loved technology. Although {{he_she}} loved parts of {{his_her}} job, {{he_she}} absolutely hated {{tedious_task}} and {{dirty_task}}. So {{name}} met with {{his_her}} life mentor {{celebrity}} who told {{him_her}} to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so {{he_she}} studied programming instead.</p>
                 <p>What a great decision! With {{his_her}} new skills, {{name}} built a(n) {{adjective}} robot named {{obnoxiuous_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} times faster.</p>
+                <button class="block" id="start-over-btn" ng-click="startOver()" type="button">Start Over</button>
             </div>
         </div>
     </div>
 
-    <div ng-controller="myCtrl">
+    <div class="block" ng-controller="myCtrl">
         App Version {{ version }}
     </div>
 

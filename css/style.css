@@ -30,6 +30,12 @@ html {
     font-weight: bold;
 }
 
+button {
+    margin: 15px auto;
+    padding: 15px;
+    border-radius: 25px;
+}
+
 /*     TOP BAR SECTION     */
 
 #top-bar {
@@ -106,15 +112,13 @@ html {
 
 #form-buttons button {
     display: inline-block;
-    margin: 15px auto;
-    padding: 15px;
-    border-radius: 25px;
 }
+
 
 /*     STORY BODY SECTION     */
 
 #story-body {
-    border-top: 2px solid black;
+/*    border-top: 2px solid black;*/
     min-height: 300px;
     padding-left: 30px;
     padding-right: 30px;

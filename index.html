@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, inital-scale=1">
-    <title>Angular Email App</title>
+    <title>Angular Mad Libs</title>
     <link href="css/normalize.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -35,16 +35,18 @@
                         <input type="text" ng-model="obnoxiuous_celebrity_input" placeholder="OBNOXIUOUS CELEBRITY" required>
                         <input type="text" ng-model="huge_number_input" placeholder="HUGE NUMBER" required>
                     </div>
+                    <div ng-show="name_input">
                     <div id="gender-selector">
                         <label>{{name_input}}'s Gender:</label>
                         <select name="genderDropdown" ng-model="selectedGender" ng-options="option for option in genderOptions" ng-change="updateGender(selectedGender)" required></select>
                     </div>
                     <span class="error block" ng-show="noGenderError">Select Gender</span>
+                    </div>
                     <div id="form-buttons">
                         <button id="submit-btn" ng-click="updateStory()" type="submit">Submit</button>
                         <button id="clear-btn" ng-click="resetForm()" type="reset">Clear</button>
                     </div>
-                    <span class="error block" ng-show="wordForm.$invalid">Complete Form</span>
+                    <span class="error block" ng-show="invalidFormError">Complete Form</span>
                 </form>
             </div>
             <div id="story-body" ng-show="showStory">
@@ -56,7 +58,7 @@
     </div>
 
     <div ng-controller="myCtrl">
-        App Version = {{ version }}
+        App Version {{ version }}
     </div>
 
     <script src="vendor/jquery-1.11.3.js"></script>

@@ -1,4 +1,4 @@
-angular.module('myApp', [])
+angular.module('myApp', ['ngAnimate'])
     .constant('VERSION', "1.2")
     .controller('myCtrl', function (VERSION, $scope) {
         $scope.version = VERSION;
@@ -37,8 +37,8 @@ angular.module('myApp', [])
                 $scope.obnoxiuous_celebrity = $scope.obnoxiuous_celebrity_input;
                 $scope.huge_number = $scope.huge_number_input;
 
-                $scope.showStory = true;
                 $scope.showWordFill = false;
+                $scope.showStory = true;
             }
         };
         $scope.resetForm = function () {

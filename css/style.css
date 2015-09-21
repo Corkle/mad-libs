@@ -127,3 +127,20 @@ button {
 #story-body h3 {
     text-align: center;
 }
+
+
+.animated.ng-hide-add,
+.animated.ng-hide-remove {
+    transition: .4s linear all;
+}
+
+.animated.ng-hide-add,
+.animated.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1;
+}
+
+.animated.ng-hide-remove,
+.animated.ng-hide-add.ng-hide-add-active {
+    opacity: 0;
+    height: 0;
+}

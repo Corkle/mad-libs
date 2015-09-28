@@ -1,8 +1,5 @@
 angular.module('myApp', ['ngAnimate'])
     .constant('VERSION', "1.2")
-    .controller('myCtrl', function (VERSION, $scope) {
-        $scope.version = VERSION;
-    })
     .controller('wordCtrl', function ($scope) {
         var gender = "";
         $scope.showWordFill = true;

@@ -54,15 +54,11 @@
 
             <div id="story-body" class="" ng-show="showStory">
                 <h3>The {{ job_title }} Turned Programmer</h3>
-                <p>{{ name }} was a {{job_title}} who loved technology. Although {{he_she}} loved parts of {{his_her}} job, {{he_she}} absolutely hated {{tedious_task}} and {{dirty_task}}. So {{name}} met with {{his_her}} life mentor {{celebrity}} who told {{him_her}} to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so {{he_she}} studied programming instead.</p>
-                <p>What a great decision! With {{his_her}} new skills, {{name}} built a(n) {{adjective}} robot named {{obnoxiuous_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} times faster.</p>
+                <p>{{ name }} was a {{job_title}} who loved technology. Although {{he_she}} loved parts of {{his_her}} job, {{he_she}} absolutely hated {{tedious_task}} and {{dirty_task}}. So {{name}} met with {{his_her}} life mentor {{celebrity}} who told {{him_her}} to learn {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so {{he_she}} studied programming instead.</p>
+                <p>What a great decision! With {{his_her}} new skills, {{name}} built a(n) {{adjective}} robot named {{obnoxiuous_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number | number}} times faster.</p>
                 <button class="block" id="start-over-btn" ng-click="startOver()" type="button">Start Over</button>
             </div>
         </div>
-    </div>
-
-    <div class="block" ng-controller="myCtrl">
-        App Version {{ version }}
     </div>
 
     <script src="vendor/jquery-1.11.3.js"></script>
